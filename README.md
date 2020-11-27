@@ -1,5 +1,5 @@
 # GARUDA
-Microsoft Azure Champion League 2 - GARUDA
+Microsoft Azure Champion League 3 - GARUDA
 
 # Contributors
 Team Name: **Reboot Rebels**
