@@ -1,0 +1,335 @@
+// #leftHalf {
+//   width: 50%;
+//   position: absolute;
+//   left: 0px;
+//   height: 100%;
+//   background-image: url('https://image.freepik.com/free-vector/white-technology-background_23-2148390335.jpg');
+//   background-repeat: repeat;
+//   background-size: cover;
+// }
+// html, body {
+//   height: 100%;
+//   margin: 0;
+
+// }
+// .grid2x2 {
+//   min-height: 100%;
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+// }
+// .grid2x2 > div {
+//   display: flex; 
+//   flex-basis: calc(50% - 40px);  
+//   justify-content: center;
+//   flex-direction: column;
+// }
+// .grid2x2 > div > div {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: row;
+// }
+
+// .box { margin: 20px; }
+// .box1 {   background-color: white;   box-shadow: 0px 1px 6px #27272780;
+//   border-radius: 5px;
+// } 
+// .box2 {  background-color: white;    box-shadow: 0px 1px 6px #27272780;
+//   border-radius: 5px; border-top: 5px solid #B90276 !important; }
+// .box3 {   background-color: white;   box-shadow: 0px 1px 6px #27272780;
+//   border-radius: 5px; border-top: 5px solid #006249 !important;}
+// .box4 { background-color: white;  box-shadow: 0px 1px 6px #27272780;
+//   border-radius: 5px;border-top: 5px solid #005691 !important; }
+
+
+  
+//   #section2 {
+//     width: 200%;
+//     height: 200rem;
+//     //background-image: url(../assets/images/background2.png);
+//     background-repeat: repeat;
+//     background-size: cover;
+//   }
+
+//   .values {
+//     font-size: 35px;
+//    // margin-left: 2rem;
+//     margin-top: 2rem;
+//   }
+//   .vl {
+//     border-left: 6px solid green;
+//     height: 500px;
+//     position: absolute;
+//     left: 50%;
+//     margin-left: -3px;
+//     top: 0;
+//   }
+//   * {
+//     box-sizing: border-box;
+//   }
+  
+//   .column {
+//     float: left;
+//     width: 33.33%;
+//     padding: 5px;
+//   }
+  
+//   /* Clearfix (clear floats) */
+//   .row::after {
+//     content: "";
+//     clear: both;
+//     display: table;
+//   }
+  
+//   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+//   @media screen and (max-width: 500px) {
+//     .column {
+//       width: 100%;
+//     }
+//   }
+
+//   html{
+//     scroll-behavior: smooth;
+//   }
+
+//   .chart-container {
+//     position: absolute;
+//   height: 150vh;
+//   width: 95rem;
+//   margin-top: 3rem;
+//   margin-left: 2rem;
+//   }
+
+//   .chart-container1 {
+//     position: absolute;
+//   height: 150vh;
+//   width: 40vw;
+//   margin-top: 3rem;
+//   margin-left: 55rem;
+//   }
+
+//   .chart-container2 {
+//     position: absolute;
+//   height: 150vh;
+//   width: 40vw;
+//   margin-top: 40rem;
+//   margin-left: 2rem;
+// }
+  
+
+// .chart-container3 {
+// position: absolute;
+// height: 150vh;
+// width: 40vw;
+// margin-top: 40rem;
+// margin-left: 50rem;
+// }
+
+
+// .three-inline-buttons .button {
+//   margin-left: 15px;
+//   margin-right: 15px;
+// }
+
+// .three-inline-buttons {
+//    display: table;
+//    margin: 0 auto;
+//    margin-left: 15rem;
+//    float: left;
+// }
+
+// @media only screen and (max-width: 960px) {
+
+//   .three-inline-buttons .button{
+//       width: 100%;
+//       margin: 20px;
+//       text-align: center;
+//   }
+  
+// }
+
+* {
+  box-sizing: border-box;
+  
+}
+
+
+ body {
+  font-family: Arial, Helvetica, sans-serif;
+ // 
+}
+
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 18px -5px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: white;
+  height: 140px;
+}
+
+
+.container {
+  margin-top: 3rem;
+}
+
+
+
+#shadow {
+float: left;
+margin-left: 15rem;
+}
+
+
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  border:1px solid black;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  border: 1px solid #888;
+  width: 75%;
+  border-radius: 0px;
+  height: 75%;
+  margin-top: 8%;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+/*Close filter button*/
+.closeFilter {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.closeFilter:hover,
+.closeFilter:focus {
+  color: red;
+  cursor: pointer;
+}
+
+html {
+  background: linear-gradient(90deg, #00fff3, #ffa1c7);
+  overflow-y: scroll!important;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0px 3px 5px #27272780;
+  -webkit-box-shadow: 0px 3px 5px #27272780;
+-moz-box-shadow: 0px 10px 3px #27272780;
+position: relative;
+// z-index: 999999;
+  min-width: 45rem;
+  margin-left: -8rem;
+}
+
+.styled-table thead tr {
+  background-color: #d4e7ff;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #d4e7ff;
+}
+
+.abc {
+  color: red;
+}
+
+// ::ng-deep .mat-select-panel {
+//   background-color: red;
+// }
+
+// ::ng-deep .mat-form-field-infix{
+//    background-color: red;
+// }
+
+// ::ng-deep .mat-select{
+//  background-color: red;
+// }
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+  background-color: white;
+}

@@ -1,0 +1,138 @@
+<html>
+<div class="row">
+    
+  <div class="column">
+    <div class="card" style="  border-radius: 5px; border-top: 5px solid #B90276 !important; ">
+        <img  *ngIf='imgFlag' src="../assets/images/drone.gif" alt="dron1" style="width: 40%;
+        margin-left: -178px;
+        margin-top: -5px;
+        height: 108px;">
+        <img *ngIf='!imgFlag' src="../assets/images/dron.png" alt="dron1" style="width: 40%; margin-left: -178px; margin-top: -16px;">
+        <h3 style=" font-family: 'Open Sans', sans-serif;margin-left: 103px;margin-top: -112px;    font-weight: 900;
+        font-size: large;">{{drone1}}</h3> 
+        
+        <span class="values" style="margin-left: 7rem;
+        font-size: x-large;">Battery:&nbsp;<span [ngStyle]="{'color': color}">{{droneBat1}}%</span></span> <br>
+        
+        <span *ngIf='imgFlag' class="values" style="margin-left: 8rem;
+        font-size: x-large;">Status:&nbsp;<span style="color: rgb(42, 148, 42);">{{droneStatus1}}</span></span>
+          
+          <span *ngIf='!imgFlag' class="values" style="margin-left: 8rem;
+           font-size: x-large;">Status:&nbsp;<span style="color: rgb(226, 17, 17);">{{droneStatus1}}</span></span>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" style="  border-radius: 5px; border-top: 5px solid #006249 !important; ">
+        <img src="../assets/images/dron.png" alt="dron1" style="width: 40%; margin-left: -178px; margin-top: -16px;">
+        <h3 style=" font-family: 'Open Sans', sans-serif;margin-left: 103px;margin-top: -112px;    font-weight: 900;
+        font-size: large;">{{drone2}}</h3> 
+        
+        <span class="values" style="margin-left: 7rem;
+        font-size: x-large;">Battery:&nbsp;<span [ngStyle]="{'color': color2}">{{droneBat2}}%</span></span> <br>
+        
+        <span class="values" style="margin-left: 8rem;
+        font-size: x-large;">Status:&nbsp;<span style="color: rgb(226, 17, 17);">{{droneStatus2}}</span></span>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="  border-radius: 5px; border-top: 5px solid #005691 !important; ">
+        <img src="../assets/images/dron.png" alt="dron1" style="width: 40%; margin-left: -178px; margin-top: -16px;">
+        <h3 style=" font-family: 'Open Sans', sans-serif;margin-left: 103px;margin-top: -112px;    font-weight: 900;
+        font-size: large;">{{drone3}}</h3> 
+        
+        <span class="values" style="margin-left: 7rem;
+        font-size: x-large;">Battery:&nbsp;<span [ngStyle]="{'color': color3}">{{droneBat3}}%</span></span> <br>
+        
+        <span class="values" style="margin-left: 8rem;
+        font-size: x-large;">Status:&nbsp;<span style="color: rgb(226, 17, 17);">{{droneStatus3}}</span></span>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="  border-radius: 5px; border-top: 5px solid #d13d10 !important; ">
+        <img src="../assets/images/dron.png" alt="dron1" style="width: 40%; margin-left: -178px; margin-top: -16px;">
+        <h3 style=" font-family: 'Open Sans', sans-serif;margin-left: 103px;margin-top: -112px;    font-weight: 900;
+        font-size: large;">{{drone4}}</h3> 
+        
+        <span class="values" style="margin-left: 7rem;
+        font-size: x-large;">Battery:&nbsp;<span [ngStyle]="{'color': color4}">{{droneBat4}}%</span></span> <br>
+        
+        <span class="values" style="margin-left: 8rem;
+        font-size: x-large;">Status:&nbsp;<span style="color: rgb(226, 17, 17);">{{droneStatus4}}</span></span>
+    </div>
+  </div>
+</div>
+<div #map style="width: 100%;height: 435px;margin-left:1px;margin-top: 0rem;">
+
+</div>
+<button class="button" style="margin-top: 5px;
+margin-left: 42rem;" (click)="connect()" mat-raised-button color = "primary">Save A Zone</button>
+
+
+<div class="container" *ngIf='showDialog'>
+  <div id="myModal" class="modal" *ngIf='showDialog'>
+    
+
+    <!-- Modal content -->
+    <div class="modal-content">
+    
+      <div id="shadow">
+        <mat-form-field style="
+        margin-top: 2rem;background-color:white" appearance="fill">
+          <mat-label>Select a Drone</mat-label>
+          <mat-select [(value)]="selected" (selectionChange)="doSomething1($event.value)">
+            <mat-option value="All">All</mat-option>
+            <mat-option value="DRONEX 1">DRONEX 1</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field style="    margin-left: 6rem;
+        margin-top: 2rem;" appearance="fill">
+          <mat-label>Select a Status</mat-label>
+          <mat-select [(value)]="selected1" (selectionChange)="doSomething($event.value)">
+            <mat-option value="All">All</mat-option>
+            <mat-option value="Saved">Saved</mat-option>
+            <mat-option value="Danger">Danger</mat-option>
+          </mat-select>
+        </mat-form-field>
+          <!-- User List -->
+          <table class = "styled-table">
+              <thead>
+                  <tr>
+                      <th class="th" style="padding: 15px 0px 15px 10px;">Date</th>
+                      <th class="th">Drone Name</th>
+                      <th class="th">Latitude</th>
+                      <th class="th">Longitude</th>
+                      <th class="th">Status</th>
+                      <th></th>
+
+                  
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let data of dataLog5; let i = index" [attr.data-index]="i">
+                      <td>{{data.timestamp | date: 'dd-MM-yyyy hh:mm a'}}</td>
+                      <td>{{data.drone}}</td>
+                      <td>{{data.latitude}}</td>
+                      <td>{{data.longitude}}</td>
+                      <td>{{data.status}}</td>
+                      <td><button  *ngIf="data.status==='Danger'" mat-raised-button color= "warn"  (click)="connect1(data.drone,data.timestamp)" >Save Me!</button></td>
+                   
+                  </tr>
+
+
+              </tbody>
+          </table>
+
+
+      <span class="close" (click)="closeDialog()">&times;</span>
+      
+  </div>
+</div>
+</div>
+</div>
+
+</html>
