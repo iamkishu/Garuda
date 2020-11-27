@@ -1,4 +1,4 @@
-# overwatch
+# GARUDA
 Microsoft Azure Champion League 2 - GARUDA
 
 # Contributors
